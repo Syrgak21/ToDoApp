@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ToDoApp</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+<body>
+
+<div class="center-column">
+<p>Are you sure you want to delete "{{task}}"</p>
+<a href="{% url 'list' %}" class="btn btn-sm btn-info">Cancel</a>
+
+<form method="POST" action="">
+{% csrf_token %}
+
+<input type = 'submit' name='delete' value="Yes" class="btn btn-danger">
+
+</form>
+</div>
+	
+</body>
+</html>
